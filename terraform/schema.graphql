@@ -1,0 +1,51 @@
+type Company {
+    id: ID!
+    name: String!
+    country: String
+    city: String
+    street: String
+    houseNumber: String
+    zipCode: String
+}
+
+type Brand {
+    id: ID!
+    companyId: ID
+    name: String
+}
+
+type Product {
+    id: ID!
+    brand: Brand
+    name: String
+    description: String
+    availability: Int
+}
+
+type Mutation {
+    createCompany(
+        name: String!,
+        country: String,
+        city: String,
+        street: String,
+        houseNumber: String,
+        zipCode: String
+    ): Company
+    createBrand(name: String!, companyId: ID!): Brand
+    createProduct(
+        name: String!,
+        brandId: ID!,
+        description: String,
+        availability: Int!
+    ): Product
+}
+
+type Query {
+    getCompany(id: ID!): Company
+    getProductsByBrand(brandId: ID!): [Product]
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+}
