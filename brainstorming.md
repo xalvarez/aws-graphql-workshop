@@ -3,6 +3,10 @@
 * What is it
 * Used by big tech players such as GitHub, Twitter or Facebook
 
+## Intro to AppSync
+
+* What is it
+
 ## Use Case
 
 Company -> Brand -> Product
@@ -14,10 +18,6 @@ Each of these entities has many attributes.
 * Get specific Company attributes
 * Get all Products from a certain Brand
 * Change availability of a specific product.
-
-## Intro to AppSync
-
-* What is it
 
 ## Live Demo
 
