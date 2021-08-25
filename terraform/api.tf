@@ -165,6 +165,34 @@ EOF
   response_template = "$util.toJson($ctx.result)"
 }
 
+resource "aws_appsync_resolver" "update_product_availability_resolver" {
+  api_id      = aws_appsync_graphql_api.api.id
+  field       = "updateProductAvailability"
+  type        = "Mutation"
+  data_source = aws_appsync_datasource.products_datasource.name
+
+  request_template = <<EOF
+{
+    "version" : "2017-02-28",
+    "operation" : "UpdateItem",
+    "key" : {
+        "id": $util.dynamodb.toDynamoDBJson($ctx.args.id)
+    },
+    "update": {
+        "expression" : "SET #availability = :availability",
+        "expressionNames": {
+            "#availability" : "availability"
+        },
+        "expressionValues" : {
+            ":availability" : $util.dynamodb.toDynamoDBJson($ctx.args.availability)
+        }
+    }
+}
+EOF
+
+  response_template = "$util.toJson($ctx.result)"
+}
+
 output "api_url" {
   value = aws_appsync_graphql_api.api.uris["GRAPHQL"]
 }

@@ -38,6 +38,7 @@ type Mutation {
         description: String,
         availability: Int!
     ): Product
+    updateProductAvailability(id: ID!, availability: Int!): Product
 }
 
 type Query {
