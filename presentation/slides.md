@@ -34,7 +34,7 @@ Source: [https://graphql.org/][1]
 
 ### What is GraphQL?
 
-ToDo Picture
+<img src="img/01_graphql.png" style="background:none; border:none; box-shadow:none; max-width:60%;"/>
 
 ---
 
@@ -51,7 +51,7 @@ Source: [https://aws.amazon.com/appsync/][2]
 
 ### Use Case
 
-ToDo Picture
+<img src="img/02_usecase.png" style="background:none; border:none; box-shadow:none; max-width:60%;"/>
 
 * Get specific Company attributes.
 * Get all Products from a certain Brand.
