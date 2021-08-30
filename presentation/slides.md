@@ -77,7 +77,7 @@ it slowly using UI.
 
 ---
 
-### Conclusions
+### Conclusion
 
 * It excels with the right data.
 * Fast growing technology.
@@ -91,4 +91,6 @@ Note:
 ---
 
 # Q & A
-ToDo Repo Link and QR
+
+https://github.com/xalvarez/aws-graphql-workshop
+<img src="img/qr.png" style="background:none; border:none; box-shadow:none; max-width:70%;"/>
