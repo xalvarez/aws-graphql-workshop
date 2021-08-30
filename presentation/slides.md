@@ -6,6 +6,7 @@ revealOptions:
 ---
 ## Implementing a GraphQL API<br> using AWS AppSync
 
+TODO: Update README
 Henrik Horeis and Xavi Alvarez
 
 Note:
