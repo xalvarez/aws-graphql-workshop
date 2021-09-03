@@ -73,6 +73,7 @@ it slowly using UI.
   * Create Data Sources,
   * Create types
   * Add "create" mutations
+  * Create resolvers for Mutations
   * Add "getProductsByBrand" query resolver.
   * Add "updateProductAvailability" mutation resolver.
 * Call API using Insomnia.
