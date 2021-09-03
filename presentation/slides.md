@@ -70,7 +70,9 @@ it slowly using UI.
   * Call API using UI.
 * Products and Brands.
   * Create Products and Brands tables
-  * Create Data Sources, update schema, add "create" mutations.
+  * Create Data Sources,
+  * Create types
+  * Add "create" mutations
   * Add "getProductsByBrand" query resolver.
   * Add "updateProductAvailability" mutation resolver.
 * Call API using Insomnia.
