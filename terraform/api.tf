@@ -130,15 +130,12 @@ resource "aws_appsync_resolver" "get_products_by_brand_resolver" {
 {
     "version" : "2017-02-28",
     "operation" : "Scan",
-    "filter" : {
-        "expression" : "contains(#brandId, :brandId)",
-        "expressionNames" : {
-            "#brandId" : "brandId"
-        },
-        "expressionValues" : {
-            ":brandId" : $util.dynamodb.toDynamoDBJson($ctx.args.brandId)
-        }
-    }
+
+    "filter" : $util.transform.toDynamoDBFilterExpression({
+      "brandId": {
+        "contains": $ctx.args.brandId
+      }
+    })
 }
 EOF
 
@@ -179,10 +176,7 @@ resource "aws_appsync_resolver" "update_product_availability_resolver" {
         "id": $util.dynamodb.toDynamoDBJson($ctx.args.id)
     },
     "update": {
-        "expression" : "SET #availability = :availability",
-        "expressionNames": {
-            "#availability" : "availability"
-        },
+        "expression" : "SET availability = :availability",
         "expressionValues" : {
             ":availability" : $util.dynamodb.toDynamoDBJson($ctx.args.availability)
         }
